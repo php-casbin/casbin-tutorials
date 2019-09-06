@@ -14,7 +14,7 @@ composer require casbin/database-adapter
 
 ### Usage
 
-```
+```php
 use Casbin\Enforcer;
 use CasbinAdapter\Database\Adapter;
 
@@ -31,3 +31,7 @@ $adapter = Adapter::newAdapter($config);
 
 $enforcer = new Enforcer('path/to/model.conf', $adapter);
 ```
+
+### More adapters
+
+Reference official document: [https://casbin.org/docs/en/adapters](https://casbin.org/docs/en/adapters)

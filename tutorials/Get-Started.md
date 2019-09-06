@@ -1,14 +1,24 @@
 # Get Started
 
+The three core concepts of Casbin are: `Model`, `Policy`, `Enforcer`.
+
+In `Casbin`, an access control model is abstracted into a `CONF` file based on the PERM metamodel (Policy, Effect, Request, Matchers).
+
+`Policy` is the stored dynamic policy rules, which can be stored in a `.csv` file or in a `database`.
+
+`Enforcer` decides whether a "subject" can access a "object" with the operation "action".
+
 ### Installation
+
+Via `composer`.
 
 ```
 composer require casbin/casbin
 ```
 
-### Get started
+### Try it
 
-#### Create a `model.conf` and `policy.csv` file.
+Create a `model.conf` and `policy.csv` file.
 
 `model.conf`:
 
@@ -33,7 +43,7 @@ p, alice, data1, read
 p, bob, data2, write
 ```
 
-#### New a Casbin enforcer with a model file and a policy file:
+New a Casbin enforcer with a model file and a policy file:
 
 ```
 use Casbin\Enforcer;
@@ -41,7 +51,7 @@ use Casbin\Enforcer;
 $enforcer = new Enforcer("path/to/model.conf", "path/to/policy.csv");
 ```
 
-#### Add an enforcement hook into your code right before the access happens
+Add an enforcement hook into your code right before the access happens
 
 ```
 $enforcer->enforce('alice', 'data1', 'read'); // true

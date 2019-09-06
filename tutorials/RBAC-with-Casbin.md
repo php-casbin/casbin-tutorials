@@ -13,6 +13,7 @@ r = sub, obj, act
 [policy_definition]
 p = sub, obj, act
 
+#  the definition for the RBAC role inheritance relations
 [role_definition]
 g = _, _
 
@@ -61,6 +62,23 @@ $enforcer->addPermissionForUser('admin', '/foo', 'POST');
 $enforcer->addPermissionForUser('admin', '/foo/:id', 'PUT');
 $enforcer->addPermissionForUser('admin', '/foo/:id', 'DELETE');
 ```
+
+Now the policy rules in the `database` are probably like this:
+
+```
+g, alice, admin
+g, bob, member
+
+p, memeber, /foo, GET
+p, memeber, /foo/:id, GET
+
+g, admin, member
+
+p, admin, /foo, POST
+p, admin, /foo/:id, PUT
+p, admin, /foo/:id, DELETE
+```
+
 
 #### Verify permissions
 
