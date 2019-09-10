@@ -1,6 +1,13 @@
 # RBAC with Casbin
 
-Here we use the officially provided [Database adapter](https://github.com/php-casbin/database-adapter).
+Here we use the officially provided [DBAL Adapter](https://github.com/php-casbin/dbal-adapter).
+
+### Installation
+
+```
+composer require casbin/casbin
+composer require casbin/dbal-adapter
+```
 
 ### Use RBAC Model
 
@@ -28,6 +35,16 @@ m = g(r.sub, p.sub) && keyMatch2(r.obj, p.obj) && regexMatch(r.act, p.act)
 
 ```php
 use Casbin\Enforcer;
+use CasbinAdapter\DBAL\Adapter;
+
+$adapter = Adapter::newAdapter([
+    'driver' => 'pdo_mysql',
+    'host' => '127.0.0.1',
+    'dbname' => 'test',
+    'user' => 'root',
+    'password' => '',
+    'port' => '3306',
+]);
 
 $enforcer = new Enforcer('path/to/model.conf', $adapter);
 ```
