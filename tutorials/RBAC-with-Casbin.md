@@ -97,7 +97,7 @@ p, admin, /foo/:id, DELETE
 ```
 
 
-#### Verify permissions
+### Verify permissions
 
 `alice` has all the permissions of `/foo`.
 
