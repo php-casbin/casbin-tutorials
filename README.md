@@ -8,3 +8,4 @@ Here are some tutorials of [PHP-Casbin](https://github.com/php-casbin/php-casbin
 * [Use with database adapter](tutorials/Use-with-database-adapter.md)
 * [Organizational RBAC with Casbin](tutorials/RBAC-with-Casbin.md)
 * [Use ABAC with Casbin](tutorials/ABAC-with-Casbin.md)
+* [Use Casbin in Slim Framework](tutorials/Use-Casbin-in-Slim.md)
