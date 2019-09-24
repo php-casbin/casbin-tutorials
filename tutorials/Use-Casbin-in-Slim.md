@@ -7,7 +7,9 @@
 ### Authentication
 
 First authentication, then authorization. 
+
 Here we use [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). 
+
 [slim-basic-auth](https://github.com/tuupola/slim-basic-auth) provided a PSR-7 and PSR-15 Basic Auth Middleware, You can install it with composer: `composer require tuupola/slim-basic-auth`.
 
 ```php
